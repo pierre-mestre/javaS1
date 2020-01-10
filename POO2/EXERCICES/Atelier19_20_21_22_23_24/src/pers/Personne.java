@@ -21,7 +21,7 @@ public class Personne {
 		this.prenom = prenom;
 		this.nom = nom;
 		this.age = age;
-		this.adresse = adresse;
+		this.adresse = new Adresse(adresse);
 	}
 
 	public String getPrenom() {
@@ -61,7 +61,7 @@ public class Personne {
 	}
 
 	public void setAdresse(Adresse adresse) {
-		this.adresse = adresse;
+		this.adresse = new Adresse(adresse);
 	}
 	
 }

@@ -22,6 +22,13 @@ public class Adresse {
 		this.ville = ville;
 		this.codePostal = codePostal;
 	}
+	public Adresse(Adresse adresse) {
+		super();
+		this.voie = adresse.voie;
+		this.complementAdresse = adresse.complementAdresse;
+		this.ville = adresse.ville;
+		this.codePostal = adresse.codePostal;
+	}
 	@Override
 	public String toString() {
 		return "Adresse [voie=" + voie + ", complementAdresse=" + complementAdresse + ", ville=" + ville

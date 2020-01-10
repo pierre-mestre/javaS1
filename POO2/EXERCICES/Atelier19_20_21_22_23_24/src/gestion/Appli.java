@@ -1,17 +1,17 @@
 package gestion;
 
+import pers.Employe;
 import pers.Personne;
 import util.Adresse;
 
 public class Appli {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		Personne martin= new Personne();
+		Personne martin=new Personne();
 		martin.setNom("MARTIN");
 		martin.setPrenom("Pierre");
 		martin.setAge(28);
-		martin.setAdresse(new Adresse("3, rue de la Pompe"," ","75013","Paris"));
+		martin.setAdresse(new Adresse("3, rue de la Pompe","", "75013", 			"Paris"));
 
 		martin.affiche(); // MARTIN Pierre 28
 
@@ -23,6 +23,22 @@ public class Appli {
 		Adresse ad=durand.getAdresse();
 		System.out.println(n+" "+p+" "+a+" "+ad.toString()); 
 		// DURAND Alain 30
+
+		Employe legoff=new Employe();
+		legoff.affichemp();
+		legoff.setNom("LEGOFF");
+		legoff.setPrenom("Eve");
+		legoff.setAge(32);
+		legoff.setSalaire(4000.0);
+		legoff.setAdresse(ad);
+		legoff.affichemp();
+
+		Employe duval= new Employe("DUVAL","Sophie",25,3000.0);
+		duval.setAdresse(new Adresse("10, rue de l'Entreprise",
+			"Pole galilee 1","95000","Cergy"));
+		duval.affichemp();
+
+
 
 	}
 
