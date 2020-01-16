@@ -3,7 +3,7 @@ package pers;
 import util.Adresse;
 
 public class Employe extends Personne {
-	double salaire;
+	protected double salaire;
 	
 	public Employe() {
 		super();
@@ -89,6 +89,10 @@ public class Employe extends Personne {
 	public void affichemp() {
 		System.out.println(this.toString());
 		
+	}
+	public void augmentation(float pc) {
+		
+		setSalaire(((pc/100)*salaire) + salaire);
 	}
 
 }
