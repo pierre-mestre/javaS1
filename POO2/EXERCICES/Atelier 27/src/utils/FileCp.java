@@ -1,6 +1,8 @@
 package utils;
 import java.io.*;
 
+import exceptions.CopieException;
+
 public class FileCp {
 	//recoit les fichiers origine et destination
 	//java FileCp fichier_origine fichier_destination
@@ -11,7 +13,7 @@ public class FileCp {
 			try {
 				int n=copie(args[0],args[1]);
 				System.out.println("copie effectuee…");
-			} catch (IOException e) {
+			} catch (CopieException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
@@ -19,7 +21,7 @@ public class FileCp {
 		}
 	}// fin de main
 	
-	private static int copie(String origine, String destination) throws IOException{
+	private static int copie(String origine, String destination) throws CopieException{
 		BufferedInputStream ficin=null;
 		BufferedOutputStream ficout=null;
 		try {		
@@ -45,10 +47,10 @@ public class FileCp {
 		}catch(FileNotFoundException e ){
 			
 			System.err.println("Pb a l'ouverture: "+e.getMessage());
-			throw new FileNotFoundException();
+			throw new CopieException("ERREUR COPIE NON EFFECTUE");
 		}catch(IOException e){
 			System.err.println("Pb lors de la copie: "+e.getMessage());
-			throw new IOException();
+			throw new CopieException("ERREUR COPIE NON EFFECTUE");
 		}
 		finally{ //fermeture des fichiers 
 			try {
