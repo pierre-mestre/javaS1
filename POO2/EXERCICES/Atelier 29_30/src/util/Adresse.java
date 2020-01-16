@@ -1,5 +1,9 @@
 package util;
 
+/**
+ * @author mestrep
+ *
+ */
 public class Adresse {
 
 
@@ -8,6 +12,9 @@ public class Adresse {
 	String ville;
 	String codePostal;
 	
+	/**
+	 * 
+	 */
 	public Adresse() {
 		super();
 		this.voie = "chemin de la reussite";
@@ -15,6 +22,12 @@ public class Adresse {
 		this.ville = "Noisy le GRAND";
 		this.codePostal = "93160";
 	}
+	/**
+	 * @param voie
+	 * @param complementAdresse
+	 * @param ville
+	 * @param codePostal
+	 */
 	public Adresse(String voie, String complementAdresse, String ville, String codePostal) {
 		super();
 		this.voie = voie;
@@ -22,6 +35,9 @@ public class Adresse {
 		this.ville = ville;
 		this.codePostal = codePostal;
 	}
+	/**
+	 * @param adresse
+	 */
 	public Adresse(Adresse adresse) {
 		super();
 		this.voie = adresse.voie;

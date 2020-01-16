@@ -1,3 +1,6 @@
+/*
+ * 
+ */
 package gestion;
 
 import java.util.ArrayList;
@@ -7,8 +10,17 @@ import pers.Personne;
 import pers.Technicien;
 import util.Adresse;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class Appli.
+ */
 public class Appli {
 
+	/**
+	 * The main method.
+	 *
+	 * @param args the arguments
+	 */
 	public static void main(String[] args) {
 		ArrayList<Personne> tpers = new  ArrayList<Personne>();
 		Personne martin=new Personne();
