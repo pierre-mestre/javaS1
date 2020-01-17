@@ -1,0 +1,1 @@
+la solde des chiffre du fichier d'entree est : 3120.0
