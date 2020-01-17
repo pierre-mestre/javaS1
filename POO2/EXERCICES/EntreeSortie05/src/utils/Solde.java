@@ -1,4 +1,5 @@
 package utils;
+import ga.Personne;
 import java.io.BufferedInputStream;
 import java.io.BufferedReader;
 import java.io.DataInputStream;
@@ -8,37 +9,41 @@ import java.io.FileInputStream;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.ObjectInputStream;
 import java.util.ArrayList;
+
+import ga.Personne;
 
 public class Solde {
 
 	
-	public static void main(String[] args) {
+	public static void main(String[] args){
 
-		 DataInputStream lecteur;
+		ObjectInputStream lecteur;
 		    
 		  
 		BufferedReader bufferReader = null;
 		FileWriter fileWriter = null;
-		ArrayList<Double> opperationList = new ArrayList<Double>();
-		double resultat = 0;
+		ArrayList<Personne> opperationList = new ArrayList<Personne>();
+
 		try {
-			lecteur= new DataInputStream(new FileInputStream(new File("personnes")));
-			String sCurrentLine;
+			lecteur= new ObjectInputStream(new FileInputStream(new File("personnes")));
+		
 
 			try {
-				while (lecteur.available() > 0) {
-					sCurrentLine = lecteur.readUTF();
-					System.out.print("("+sCurrentLine+")");
-					System.out.print(" + ");
-					//opperationList.add(Double.valueOf());
+				while (true) {
+					//sCurrentLine = (Personne) lecteur.readObject();
+					opperationList.add((Personne)lecteur.readObject());
 				}
 					
 			}catch (EOFException a){
-				for (Double opperation : opperationList) {
-					resultat += opperation;
+				for (Personne opperation : opperationList) {
+					System.out.println(opperation.toString());
 				}
-				System.out.println(resultat);
+				
+			} catch (ClassNotFoundException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
 			}			
 
 		} catch (IOException e) {
