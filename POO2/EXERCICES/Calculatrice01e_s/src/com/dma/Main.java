@@ -12,13 +12,11 @@ public class Main extends Application {
 		try {
 			primaryStage.setTitle("Calculatrice");
 			FXMLLoader loader = new FXMLLoader();
-            	loader.setLocation(Main.class.
-getResource("vue/Calculatrice.fxml"));
+            	loader.setLocation(Main.class.getResource("vue/Calculatrice.fxml"));
             	AnchorPane mainLayout = (AnchorPane) loader.load();
 
 			Scene scene = new Scene(mainLayout);
-			scene.getStylesheets().add(getClass().
-getResource("application.css").toExternalForm());
+			scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
 			primaryStage.setScene(scene);
 			primaryStage.show();
 		} catch(Exception e) {
